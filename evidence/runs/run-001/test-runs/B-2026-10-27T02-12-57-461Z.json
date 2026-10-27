@@ -1,0 +1,83 @@
+{
+  "phase": "B",
+  "startedAt": "2026-10-27T02:12:57.461Z",
+  "sourceVersion": "6b78a492924142fe859c614e412cc5adc406407a",
+  "cases": [
+    {
+      "id": "ZIP-01",
+      "input": "2 resources / current / 2 templates / TTF+OTF",
+      "expected": "all counts, raw hashes and references preserved",
+      "status": "PASS",
+      "durationMs": 555
+    },
+    {
+      "id": "ZIP-02",
+      "input": "unsaved caption edit, actual UI download",
+      "expected": "current JSON and decoded PNG match editor, no template overwrite",
+      "status": "PASS",
+      "durationMs": 906
+    },
+    {
+      "id": "ZIP-03",
+      "input": "101 stored template snapshots",
+      "expected": "101 distinct template JSON entries",
+      "status": "PASS",
+      "durationMs": 584
+    },
+    {
+      "id": "ZIP-04",
+      "input": "shared red / template-only blue / unused green",
+      "expected": "three image bodies, no duplicates, all asset refs resolve",
+      "status": "PASS",
+      "durationMs": 527
+    },
+    {
+      "id": "ZIP-05",
+      "input": "TTF+OTF import, apply TTF, save template, reload, load template, ZIP",
+      "expected": "font applied and restored, both original fonts exported",
+      "status": "PASS",
+      "durationMs": 1431
+    },
+    {
+      "id": "ZIP-06",
+      "input": "text bytes disguised as invalid.ttf",
+      "expected": "rejected, font library unchanged",
+      "status": "PASS",
+      "durationMs": 473
+    },
+    {
+      "id": "ZIP-07",
+      "input": "same template names and ../ Korean resource name",
+      "expected": "unique safe paths, original names preserved",
+      "status": "PASS",
+      "durationMs": 519
+    },
+    {
+      "id": "ZIP-08",
+      "input": "missing image then wrong image bytes under original hash",
+      "expected": "both reject, no input mutation or partial result",
+      "status": "PASS",
+      "durationMs": 492
+    },
+    {
+      "id": "ZIP-09",
+      "input": "10MB font/+1; 100MB sum/+1; actual 11x9.1MB images",
+      "expected": "exact limits accepted, over rejected",
+      "status": "PASS",
+      "durationMs": 634
+    },
+    {
+      "id": "ZIP-10",
+      "input": "empty libraries, current card, triple click",
+      "expected": "one actual download and zero optional counts",
+      "status": "PASS",
+      "durationMs": 1337
+    }
+  ],
+  "fixturePreflight": true,
+  "passed": 10,
+  "failed": 0,
+  "finishedAt": "2026-10-27T02:13:07.761Z",
+  "complete": true,
+  "errorRound": false
+}

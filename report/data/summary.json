@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-27T01:33:20.196Z",
-  "status": "incomplete",
+  "generatedAt": "2026-10-27T02:14:19.200Z",
+  "status": "tests-complete-publication-pending",
   "tools": [
     {
       "name": "도구 A",
@@ -55,13 +55,54 @@
     },
     {
       "name": "도구 B",
-      "started": false,
-      "finished": false,
-      "seconds": null,
-      "requests": null,
-      "errorRounds": null,
-      "passCount": null,
-      "cases": []
+      "started": true,
+      "finished": true,
+      "seconds": 1459,
+      "requests": 8,
+      "errorRounds": 1,
+      "passCount": 10,
+      "cases": [
+        {
+          "id": "ZIP-01",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-02",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-03",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-04",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-05",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-06",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-07",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-08",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-09",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-10",
+          "status": "PASS"
+        }
+      ]
     }
   ]
 }

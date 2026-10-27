@@ -6,8 +6,10 @@
     "lastAcceptanceSource": "d90a3bae21fc91fcdf04e4ca3ae3628d9820c6a8"
   },
   "B": {
-    "start": null,
-    "end": null
+    "start": "3e7d7b0fbed8fc32abccee69e1690cb6b2370050",
+    "end": "6b78a492924142fe859c614e412cc5adc406407a",
+    "featureCommit": "32d515fdf6a27072260b2b50f1664c3426a8d6d1",
+    "lastAcceptanceSource": "6b78a492924142fe859c614e412cc5adc406407a"
   },
   "deliveryRef": "task05-A-end"
 }

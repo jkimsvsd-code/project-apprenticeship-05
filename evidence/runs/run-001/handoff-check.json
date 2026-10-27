@@ -1,7 +1,8 @@
 {
-  "status": "prepared-not-delivered",
+  "status": "delivered-received",
   "path": "handoff/runs/run-001/A-to-B.md",
   "sha256": "1e9b1185ebb872fbfcbcebdfd1fb46d739531dc7eb23f5c793f0e4ffa5464ae6",
-  "BReceivedSha256": null,
-  "deliveryVerified": false
+  "BReceivedSha256": "1e9b1185ebb872fbfcbcebdfd1fb46d739531dc7eb23f5c793f0e4ffa5464ae6",
+  "deliveryVerified": true,
+  "BReceivedRecord": "handoff/runs/run-001/B-received.md"
 }
