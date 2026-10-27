@@ -8,6 +8,8 @@ const required = [
   'handoff/runs/run-001/A-to-B.md',
   'report/index.html',
   'docs/quick-check.md',
+  'evidence/runs/run-001/publication-check.json',
+  'handoff/runs/run-001/B-received.md',
 ];
 let incomplete = false;
 for (const file of required) {

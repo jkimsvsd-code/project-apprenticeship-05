@@ -18,7 +18,7 @@ for (const name of ['A', 'B']) {
       ? (Date.parse(session.endedAt) - Date.parse(session.startedAt)) / 1000
       : null,
     requests: session?.requestCount ?? null,
-    errorRounds: runs.filter((r) => r.errorRound).length,
+    errorRounds: session ? runs.filter((r) => r.errorRound).length : null,
     passCount: runs.at(-1)?.passed ?? null,
     cases: runs.at(-1)?.cases.map(({ id, status }) => ({ id, status })) ?? [],
   });
@@ -34,7 +34,7 @@ const escape = (value) =>
 const rows = summary.tools
   .map(
     (t) =>
-      `<tr><td>${t.name}</td><td>${t.finished ? '종료' : t.started ? '진행 중' : '시작 전'}</td><td>${escape(t.seconds)}</td><td>${escape(t.requests)}</td><td>${t.errorRounds}</td><td>${escape(t.passCount)}/10</td></tr>`,
+      `<tr><td>${t.name}</td><td>${t.finished ? '종료' : t.started ? '진행 중' : '시작 전'}</td><td>${escape(t.seconds)}</td><td>${escape(t.requests)}</td><td>${escape(t.errorRounds)}</td><td>${escape(t.passCount)}/10</td></tr>`,
   )
   .join('');
 await writeFile(
