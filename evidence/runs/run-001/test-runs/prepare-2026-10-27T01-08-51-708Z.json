@@ -1,0 +1,93 @@
+{
+  "phase": "prepare",
+  "startedAt": "2026-10-27T01:08:51.708Z",
+  "sourceVersion": "d1b81217a51c41f3192039f8f30ecb3ff74db43e",
+  "cases": [
+    {
+      "id": "ZIP-01",
+      "input": "2 resources / current / 2 templates / TTF+OTF",
+      "expected": "all counts, raw hashes and references preserved",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 553
+    },
+    {
+      "id": "ZIP-02",
+      "input": "unsaved caption edit, actual UI download",
+      "expected": "current JSON and decoded PNG match editor, no template overwrite",
+      "status": "FAIL",
+      "error": "locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '전체 자료 ZIP 다운로드', exact: true })\u001b[22m\n",
+      "durationMs": 5811
+    },
+    {
+      "id": "ZIP-03",
+      "input": "101 stored template snapshots",
+      "expected": "101 distinct template JSON entries",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 493
+    },
+    {
+      "id": "ZIP-04",
+      "input": "shared red / template-only blue / unused green",
+      "expected": "three image bodies, no duplicates, all asset refs resolve",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 487
+    },
+    {
+      "id": "ZIP-05",
+      "input": "TTF+OTF import, apply TTF, save template, reload, load template, ZIP",
+      "expected": "font applied and restored, both original fonts exported",
+      "status": "FAIL",
+      "error": "locator.setInputFiles: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('개인 글꼴 파일', { exact: true })\u001b[22m\n",
+      "durationMs": 5462
+    },
+    {
+      "id": "ZIP-06",
+      "input": "text bytes disguised as invalid.ttf",
+      "expected": "rejected, font library unchanged",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 514
+    },
+    {
+      "id": "ZIP-07",
+      "input": "same template names and ../ Korean resource name",
+      "expected": "unique safe paths, original names preserved",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 469
+    },
+    {
+      "id": "ZIP-08",
+      "input": "missing image then wrong image bytes under original hash",
+      "expected": "both reject, no input mutation or partial result",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 468
+    },
+    {
+      "id": "ZIP-09",
+      "input": "10MB font/+1; 100MB sum/+1; actual 11x9.1MB images",
+      "expected": "exact limits accepted, over rejected",
+      "status": "FAIL",
+      "error": "page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4175/@fs[workspace]/packages/project-archive/src/index.ts",
+      "durationMs": 475
+    },
+    {
+      "id": "ZIP-10",
+      "input": "empty libraries, current card, triple click",
+      "expected": "one actual download and zero optional counts",
+      "status": "FAIL",
+      "error": "locator.evaluate: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '전체 자료 ZIP 다운로드', exact: true })\u001b[22m\n",
+      "durationMs": 5465
+    }
+  ],
+  "fixturePreflight": true,
+  "passed": 0,
+  "failed": 10,
+  "finishedAt": "2026-10-27T01:11:23.887Z",
+  "complete": true,
+  "errorRound": true
+}

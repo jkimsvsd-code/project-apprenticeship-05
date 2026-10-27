@@ -1,4 +1,3 @@
-/* eslint-disable no-empty -- expected errors and readiness probes */
 // Evaluated inside a real browser. All inputs are frozen, synthetic fixtures.
 export async function coreScenario({ scenario, fixture, apiUrl }) {
   const api = await import(/* @vite-ignore */ apiUrl);

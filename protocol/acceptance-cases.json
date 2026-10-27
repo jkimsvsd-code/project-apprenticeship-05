@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ZIP-01",
+    "input": "2 resources / current / 2 templates / TTF+OTF",
+    "expected": "all counts, raw hashes and references preserved"
+  },
+  {
+    "id": "ZIP-02",
+    "input": "unsaved caption edit, actual UI download",
+    "expected": "current JSON and decoded PNG match editor, no template overwrite"
+  },
+  {
+    "id": "ZIP-03",
+    "input": "101 stored template snapshots",
+    "expected": "101 distinct template JSON entries"
+  },
+  {
+    "id": "ZIP-04",
+    "input": "shared red / template-only blue / unused green",
+    "expected": "three image bodies, no duplicates, all asset refs resolve"
+  },
+  {
+    "id": "ZIP-05",
+    "input": "TTF+OTF import, apply TTF, save template, reload, load template, ZIP",
+    "expected": "font applied and restored, both original fonts exported"
+  },
+  {
+    "id": "ZIP-06",
+    "input": "text bytes disguised as invalid.ttf",
+    "expected": "rejected, font library unchanged"
+  },
+  {
+    "id": "ZIP-07",
+    "input": "same template names and ../ Korean resource name",
+    "expected": "unique safe paths, original names preserved"
+  },
+  {
+    "id": "ZIP-08",
+    "input": "missing image then wrong image bytes under original hash",
+    "expected": "both reject, no input mutation or partial result"
+  },
+  {
+    "id": "ZIP-09",
+    "input": "10MB font/+1; 100MB sum/+1; actual 11x9.1MB images",
+    "expected": "exact limits accepted, over rejected"
+  },
+  {
+    "id": "ZIP-10",
+    "input": "empty libraries, current card, triple click",
+    "expected": "one actual download and zero optional counts"
+  }
+]

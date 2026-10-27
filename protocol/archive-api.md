@@ -19,3 +19,5 @@ manifest: `kind: jjal-archive`, `schemaVersion: 1`, `counts: {resources, templat
 `importPersonalFont(file: File)`은 TTF/OTF·10MB·실제 FontFace 로드를 검증한 뒤 브라우저에 원본을 보관한다. `{id,name,sha256,mimeType}` 반환. `listPersonalFonts()`는 미사용 글꼴도 포함한 전체 메타데이터 목록을 반환한다.
 
 생성 ZIP은 Python zipfile로 독립 CRC·경로·바이트 검사를 한다. PNG는 브라우저에서 디코딩한다. 용량 경계는 함수 경계와 실제 초과 snapshot을 함께 검사한다.
+
+개인 글꼴의 브라우저 내부 family는 `jjal-uploaded-` 접두사를 사용해 기본 글꼴과 이름 충돌을 방지한다. ZIP JSON은 이 구현용 family 대신 원본 asset 참조를 보존한다.

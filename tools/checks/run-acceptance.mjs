@@ -85,7 +85,7 @@ try {
   for (const item of cases) {
     const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } }),
       page = await context.newPage();
-    page.setDefaultTimeout(5000);
+    page.setDefaultTimeout(15000);
     page.setDefaultNavigationTimeout(15000);
     const before = Date.now();
     const row = { id: item.id, input: item.input, expected: item.expected, status: 'FAIL' };

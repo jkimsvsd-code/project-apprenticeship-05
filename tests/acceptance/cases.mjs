@@ -40,6 +40,7 @@ async function tool(page, id) {
 async function download(page, ctx, repeat = false) {
   await tool(page, 'export');
   const pending = page.waitForEvent('download');
+  void pending.catch(() => {}); // The button can be absent before implementation.
   const button = page.getByRole('button', { name: '전체 자료 ZIP 다운로드', exact: true });
   if (repeat)
     await button.evaluate((b) => {
@@ -82,10 +83,17 @@ export const cases = [
       const expected = await page
         .locator('canvas')
         .first()
-        .evaluate((c) => ({
+        .evaluate(async (c) => ({
           width: c.width,
           height: c.height,
-          pixels: Array.from(c.getContext('2d').getImageData(0, 0, c.width, c.height).data),
+          pixels: Array.from(
+            new Uint8Array(
+              await crypto.subtle.digest(
+                'SHA-256',
+                c.getContext('2d').getImageData(0, 0, c.width, c.height).data,
+              ),
+            ),
+          ),
         }));
       const r = await download(page, ctx);
       assert.ok(
@@ -111,7 +119,14 @@ export const cases = [
         return {
           width: c.width,
           height: c.height,
-          pixels: Array.from(c.getContext('2d').getImageData(0, 0, c.width, c.height).data),
+          pixels: Array.from(
+            new Uint8Array(
+              await crypto.subtle.digest(
+                'SHA-256',
+                c.getContext('2d').getImageData(0, 0, c.width, c.height).data,
+              ),
+            ),
+          ),
         };
       }, png);
       assert.deepEqual(actual, expected);

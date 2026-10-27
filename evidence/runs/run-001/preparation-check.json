@@ -1,0 +1,13 @@
+{
+  "phase": "preparation",
+  "dateInSeoul": "2026-10-27",
+  "typecheck": "PASS",
+  "eslint": "PASS",
+  "unitTestFiles": 44,
+  "unitTestsPassed": 673,
+  "build": "PASS",
+  "buildWarning": "Existing bundle larger than 500kB",
+  "fixtureDocumentSchema": "PASS",
+  "fixtureTTFRealFontFace": "PASS",
+  "fixtureOTFRealFontFace": "PASS"
+}
