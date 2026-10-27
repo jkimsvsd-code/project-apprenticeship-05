@@ -12,6 +12,9 @@ npm run dev
 npm run check
 npm run freeze:verify
 npm run test:acceptance -- --phase B
+node tools/progress/status.mjs
+node tools/report/build.mjs
+node tools/preflight/check.mjs
 ```
 
 기본 검사는 설치된 Chrome을 사용한다. 다른 설치에서는 PLAYWRIGHT_CHANNEL을 지정한다. 원시 ZIP·브라우저 결과는 .local/에 보관하고, 익명화한 회차 요약만 evidence/에 기록한다. Python 경로는 PYTHON으로 지정할 수 있다.

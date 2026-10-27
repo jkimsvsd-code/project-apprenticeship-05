@@ -68,8 +68,20 @@ export async function createArchive(
   // Snapshot all metadata synchronously before any I/O; Blobs are immutable.
   const current = parseDocument(structuredClone(input.current.document));
   const templates = input.templates.map((t) => TemplateSchema.parse(structuredClone(t)));
-  const resources = structuredClone(input.resources),
-    fonts = structuredClone(input.fonts);
+  const resources = input.resources.map(({ id, name, sha256, folders }) => {
+    if (
+      typeof id !== 'string' ||
+      typeof name !== 'string' ||
+      (folders && (!Array.isArray(folders) || folders.some((f) => typeof f !== 'string')))
+    )
+      throw new Error('자원 목록 정보가 올바르지 않습니다.');
+    return { id, name, sha256, ...(folders ? { folders: [...folders] } : {}) };
+  });
+  const fonts = input.fonts.map(({ id, name, sha256, mimeType }) => {
+    if (typeof id !== 'string' || typeof name !== 'string')
+      throw new Error('글꼴 목록 정보가 올바르지 않습니다.');
+    return { id, name, sha256, mimeType };
+  });
   const bodies = new Map(input.files),
     preview = input.current.preview;
   uniqueIds(templates, '템플릿');

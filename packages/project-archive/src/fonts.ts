@@ -61,10 +61,22 @@ export async function importPersonalFont(file: File): Promise<PersonalFont> {
   let saved: StoredFont;
   try {
     const tx = db.transaction('fonts', 'readwrite');
-    const existing = await tx.store.get(hash);
-    saved = existing ?? row;
-    if (!existing) await tx.store.add(row);
-    await tx.done;
+    const completed = tx.done;
+    void completed.catch(() => undefined);
+    try {
+      const existing = await tx.store.get(hash);
+      saved = existing ?? row;
+      if (!existing) await tx.store.add(row);
+      await completed;
+    } catch (cause) {
+      try {
+        tx.abort();
+      } catch {
+        /* Already completed or aborted. */
+      }
+      await completed.catch(() => undefined);
+      throw cause;
+    }
   } catch (cause) {
     throw new Error('개인 글꼴을 저장하지 못했습니다. 브라우저 저장 공간을 확인해 주세요.', {
       cause,
