@@ -6,6 +6,7 @@ import { createSavedTemplate, type SavedTemplate } from '@jjal/template-kit';
 import { exportTemplateBackup, readBackupFile, restoreTemplate } from '@jjal/template-kit/browser';
 import { cachePreparedImages, cacheResourceBlobs } from '../composition/resources';
 import { UiIcon } from './UiIcon';
+import { readPersonalFont } from '../../../../packages/project-archive/src/index';
 
 const repository = createTemplateRepository();
 type Snapshot = {
@@ -78,7 +79,14 @@ export function TemplateLibrary({ getSnapshot, applyTemplate, composing }: Props
     const snapshot = getSnapshot();
     const previous = update ? (await repository.read(selected)).template : undefined;
     const template = createSavedTemplate(name, snapshot.doc, previous);
-    await repository.save(template, imageBodies(snapshot), update ? 'update' : 'create');
+    const bodies = new Map<string, Blob>(imageBodies(snapshot));
+    // 개인 글꼴 원본도 템플릿 소재로 함께 보관해 새로고침 뒤 글꼴 준비→불러오기가 가능하게 한다.
+    for (const asset of template.document.assets)
+      if (asset.mimeType.startsWith('font/'))
+        bodies.set(asset.sha256, (await readPersonalFont(asset.sha256)).blob);
+    for (const sha256 of [...bodies.keys()])
+      if (!template.document.assets.some((asset) => asset.sha256 === sha256)) bodies.delete(sha256);
+    await repository.save(template, bodies, update ? 'update' : 'create');
     setTemplates(await repository.list());
     setSelected(template.id);
     setName(template.name);

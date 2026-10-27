@@ -95,14 +95,46 @@ export function parseTemplateBackup(text: string): TemplateBackup {
 /** 현재 demo가 편집·출력할 수 있는 문서만 받아 조용한 데이터 누락을 막는다. */
 export function validateEditorDocument(input: StudioDocument): StudioDocument {
   const doc = parseDocument(input);
-  if (doc.elements.some((element) => 'style' in element && element.style.font.kind !== 'builtin'))
-    throw new Error('사용자 업로드 글꼴은 아직 지원하지 않습니다. 기본 글꼴을 선택해 주세요.');
+  for (const element of doc.elements) {
+    if (!('style' in element) || element.style.font.kind !== 'uploaded') continue;
+    const assetId = element.style.font.assetId;
+    const asset = doc.assets.find((item) => item.id === assetId);
+    if (!asset || !PERSONAL_FONT_TYPES.includes(asset.mimeType))
+      throw new Error('개인 글꼴은 TTF 또는 OTF 원본이 연결되어 있어야 합니다.');
+  }
   if (DEMO_RATIOS.some((ratio) => !doc.layouts.some((layout) => layout.ratio === ratio)))
     throw new Error('템플릿에는 1:1·4:5·9:16 기본 배치가 필요합니다.');
   const used = referencedAssetIds(doc);
-  if (doc.assets.some((asset) => !used.has(asset.id) || !asset.mimeType.startsWith('image/')))
-    throw new Error('이미지 외 소재 또는 참조하지 않는 소재는 저장할 수 없습니다.');
+  if (
+    doc.assets.some(
+      (asset) =>
+        !used.has(asset.id) ||
+        !(asset.mimeType.startsWith('image/') || PERSONAL_FONT_TYPES.includes(asset.mimeType)),
+    )
+  )
+    throw new Error('이미지·개인 글꼴 외 소재 또는 참조하지 않는 소재는 저장할 수 없습니다.');
   return doc;
+}
+
+const PERSONAL_FONT_TYPES: readonly string[] = ['font/ttf', 'font/otf'];
+
+/** 글꼴을 바꾼 뒤 더 이상 쓰지 않는 개인 글꼴 소재만 제거한다. 이미지 소재는 그대로 둔다. */
+export function withoutUnusedFontAssets(input: StudioDocument): StudioDocument {
+  const used = referencedAssetIds(input);
+  if (input.assets.every((asset) => used.has(asset.id) || !asset.mimeType.startsWith('font/')))
+    return input;
+  return parseDocument({
+    ...input,
+    assets: input.assets.filter(
+      (asset) => used.has(asset.id) || !asset.mimeType.startsWith('font/'),
+    ),
+  });
+}
+
+export function usesPersonalFonts(doc: StudioDocument): boolean {
+  return doc.elements.some(
+    (element) => 'style' in element && element.style.font.kind === 'uploaded',
+  );
 }
 
 export function createSavedTemplate(
@@ -110,7 +142,7 @@ export function createSavedTemplate(
   document: StudioDocument,
   previous?: SavedTemplate,
 ): SavedTemplate {
-  const doc = validateEditorDocument(document);
+  const doc = validateEditorDocument(withoutUnusedFontAssets(document));
   const existing = previous ? TemplateSchema.parse(previous) : undefined;
   const now = new Date(
     Math.max(Date.now(), Date.parse(doc.updatedAt), existing ? Date.parse(existing.updatedAt) : 0),
@@ -145,6 +177,8 @@ export function cloneTemplateDocument(input: StudioDocument): StudioDocument {
     if (element.kind === 'bubble' && element.customShape)
       element.customShape.sourceAssetId = assetIds.get(element.customShape.sourceAssetId)!;
     if (element.groupId) element.groupId = groupIds.get(element.groupId)!;
+    if ('style' in element && element.style.font.kind === 'uploaded')
+      element.style.font = { kind: 'uploaded', assetId: assetIds.get(element.style.font.assetId)! };
   }
   for (const background of [
     doc.background,

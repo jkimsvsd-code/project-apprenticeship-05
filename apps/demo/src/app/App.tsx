@@ -9,6 +9,7 @@ import {
   EditHistory,
   createEditorDocument,
   changeCaption,
+  applyUploadedFont,
   changeDocument,
   transformElement,
   hitTestElement,
@@ -39,12 +40,19 @@ import { ASPECT_RATIOS, canvasSize } from '@jjal/policies';
 import {
   renderDocument,
   canvasFont,
+  loadUploadedFont,
+  registerUploadedFontAssets,
   textContentRect,
   textDrawingOffset,
   wrapText,
 } from '@jjal/renderer';
 import { BackgroundTools } from './BackgroundTools';
 import { ExportTools } from './ExportTools';
+import { ArchiveTools } from './ArchiveTools';
+import {
+  readPersonalFont,
+  type PersonalFont,
+} from '../../../../packages/project-archive/src/index';
 import { TemplateLibrary } from './TemplateLibrary';
 import { StarterTemplates } from './StarterTemplates';
 import { StyleTools } from './StyleTools';
@@ -288,6 +296,15 @@ function Editor() {
   );
   const caption =
     candidate?.kind === 'text' || candidate?.kind === 'bubble' ? candidate : undefined;
+  const personalTarget = doc.elements.find((element) => element.id === personalFontTarget(doc));
+  const appliedPersonalFont =
+    personalTarget && 'style' in personalTarget && personalTarget.style.font.kind === 'uploaded'
+      ? (doc.assets.find(
+          (asset) =>
+            personalTarget.style.font.kind === 'uploaded' &&
+            asset.id === personalTarget.style.font.assetId,
+        )?.sha256 ?? '')
+      : '';
   const selectedBackgroundId = selectionIds.find(
     (id) => doc.elements.find((element) => element.id === id)?.kind === 'panel-background',
   );
@@ -506,6 +523,33 @@ function Editor() {
     fontRequest.current++;
     setFontBusy(false);
     if (fontBusy) setNotice('글꼴 적용을 취소했습니다. 현재 선택한 문구를 편집할 수 있습니다.');
+  }
+  /** 선택한 문구(없으면 첫 편집 가능 문구)에 개인 글꼴을 원본 소재 참조로 적용한다. */
+  function personalFontTarget(current: StudioDocument) {
+    if (caption && current.elements.some((element) => element.id === caption.id)) return caption.id;
+    return current.elements.find(
+      (element) => (element.kind === 'text' || element.kind === 'bubble') && !element.locked,
+    )?.id;
+  }
+  async function applyPersonalFont(font: PersonalFont) {
+    const documentId = latest.current.doc.id;
+    const ticket = ++fontRequest.current;
+    const stored = await readPersonalFont(font.sha256);
+    await loadUploadedFont(font.sha256, stored.blob);
+    if (ticket !== fontRequest.current || latest.current.doc.id !== documentId)
+      throw new Error('글꼴을 준비하는 동안 작업이 바뀌었습니다. 다시 선택해 주세요.');
+    const elementId = personalFontTarget(latest.current.doc);
+    if (!elementId) throw new Error('개인 글꼴을 적용할 문구가 없습니다.');
+    const next = applyUploadedFont(latest.current.doc, elementId, {
+      sha256: font.sha256,
+      mimeType: font.mimeType,
+      byteLength: stored.blob.size,
+    });
+    // 측정·렌더링 전에 새 소재 ID와 원본 해시를 연결한다.
+    registerUploadedFontAssets(next);
+    commit(next);
+    setError('');
+    setNotice(`${font.name} 개인 글꼴을 적용했습니다.`);
   }
   async function selectFont(family: BuiltinFontFamily) {
     if (!caption) return;
@@ -1210,6 +1254,15 @@ function Editor() {
                 setError(message(cause));
               }
             }}
+          />
+          <ArchiveTools
+            getSource={() => latest.current}
+            appliedFont={appliedPersonalFont}
+            disabled={
+              resourceBusy || backgroundBusy || starterBusy || styleBusy || fontBusy || composing
+            }
+            onApplyFont={applyPersonalFont}
+            onNotice={setNotice}
           />
         </>
       ),

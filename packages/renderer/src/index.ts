@@ -9,7 +9,18 @@ import type {
 import { fontDefinition } from '@jjal/document-model';
 import { traceThoughtCloud } from './bubbleGeometry';
 export { THOUGHT_CLOUD_SVG_PATH } from './bubbleGeometry';
-export { ensureBuiltinFonts, ensureFont, ensureDocumentFonts, isFontReady } from './fonts';
+export {
+  ensureBuiltinFonts,
+  ensureFont,
+  ensureDocumentFonts,
+  isFontReady,
+  isUploadedFontReady,
+  loadUploadedFont,
+  registerUploadedFontAssets,
+  setUploadedFontLoader,
+  uploadedFontFamily,
+} from './fonts';
+import { registerUploadedFontAssets, uploadedFontFamily, uploadedFontHash } from './fonts';
 import { canvasSize, type AspectRatio } from '@jjal/policies';
 import { contourPaint, effectiveContour, paintImageContour } from './contours';
 export { effectiveContour, alphaContourBand, contourInkAlpha } from './contours';
@@ -172,8 +183,14 @@ function glyphContour(element: TextElement): Contour {
 
 /** Regular-only original faces never request synthetic bold; missing glyphs use local Sans. */
 export function canvasFont(style: TextStyle): string {
-  if (style.font.kind !== 'builtin')
-    throw new Error('업로드 글꼴 렌더링은 아직 지원하지 않습니다. 기본 글꼴을 선택해주세요.');
+  if (style.font.kind === 'uploaded') {
+    // Personal faces are one regular face; missing glyphs use local Sans. An unprepared
+    // reference is an error rather than a silent fallback to another font.
+    const hash = uploadedFontHash(style.font.assetId);
+    if (!hash)
+      throw new Error('업로드 글꼴을 아직 준비하지 않았습니다. 글꼴을 다시 선택해 주세요.');
+    return `400 ${style.fontSize}px "${uploadedFontFamily(hash)}", "Noto Sans KR"`;
+  }
   const definition = fontDefinition(style.font.family);
   const weight = definition.boldAvailable && style.bold ? 700 : 400;
   const family = definition.boldAvailable
@@ -662,6 +679,7 @@ export function renderDocument(
   doc: StudioDocument,
   options: RenderOptions = {},
 ) {
+  registerUploadedFontAssets(doc);
   const frame = canvas.ownerDocument.createElement('canvas');
   paintDocument(frame, doc, options);
   const context = canvas.getContext('2d', { willReadFrequently: true });

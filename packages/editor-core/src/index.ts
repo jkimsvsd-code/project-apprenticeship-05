@@ -220,8 +220,10 @@ export function changeCaption(
     if (patch.text !== undefined) element.text = patch.text;
     if (patch.fontSize !== undefined) element.style.fontSize = patch.fontSize;
     if (patch.color !== undefined) element.style.color = patch.color;
-    if (patch.fontFamily !== undefined)
+    if (patch.fontFamily !== undefined) {
       element.style.font = { kind: 'builtin', family: patch.fontFamily };
+      dropUnusedFontAssets(draft);
+    }
     const transform = draft.layouts
       .find((l) => l.ratio === ratio)
       ?.panels.flatMap((panel) => panel.elements)
@@ -229,6 +231,49 @@ export function changeCaption(
     if (!transform) throw new Error('문구 배치를 찾을 수 없습니다.');
     for (const key of ['x', 'y', 'width'] as const)
       if (patch[key] !== undefined) transform[key] = patch[key];
+  });
+}
+
+function dropUnusedFontAssets(draft: StudioDocument) {
+  const used = new Set(
+    draft.elements.flatMap((element) =>
+      'style' in element && element.style.font.kind === 'uploaded'
+        ? [element.style.font.assetId]
+        : [],
+    ),
+  );
+  draft.assets = draft.assets.filter(
+    (asset) => !asset.mimeType.startsWith('font/') || used.has(asset.id),
+  );
+}
+
+/** 개인 글꼴은 SHA-256 기준 원본 소재로 참조한다. 같은 원본은 문서에 한 번만 둔다. */
+export function applyUploadedFont(
+  doc: StudioDocument,
+  elementId: string,
+  font: { sha256: string; mimeType: 'font/ttf' | 'font/otf'; byteLength: number },
+) {
+  editable(doc, elementId);
+  return changeDocument(doc, (draft) => {
+    const element = draft.elements.find((item) => item.id === elementId);
+    if (!element || (element.kind !== 'text' && element.kind !== 'bubble'))
+      throw new Error('글꼴을 적용할 문구를 선택해 주세요.');
+    let asset = draft.assets.find((item) => item.sha256 === font.sha256);
+    if (asset && asset.mimeType !== font.mimeType)
+      throw new Error('같은 원본 해시에 다른 소재 정보가 있습니다.');
+    if (!asset) {
+      asset = AssetSchema.parse({
+        id: `font-${font.sha256.slice(0, 32)}-${crypto.randomUUID().slice(0, 8)}`,
+        mimeType: font.mimeType,
+        byteLength: font.byteLength,
+        sha256: font.sha256,
+        pixelWidth: null,
+        pixelHeight: null,
+      });
+      draft.assets.push(asset);
+    }
+    element.style.font = { kind: 'uploaded', assetId: asset.id };
+    dropUnusedFontAssets(draft);
   });
 }
 

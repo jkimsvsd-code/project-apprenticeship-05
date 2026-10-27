@@ -1,13 +1,14 @@
 import type { Asset, StudioDocument } from '@jjal/document-model';
 import { prepareImage, type PreparedImage } from '@jjal/image-io';
 import { LIMITS } from '@jjal/policies';
-import { ensureDocumentFonts, renderDocument } from '@jjal/renderer';
+import { ensureDocumentFonts, loadUploadedFont, renderDocument } from '@jjal/renderer';
 import {
   BackupSchema,
   TemplateSchema,
   parseTemplateBackup,
   validateEditorDocument,
   cloneTemplateDocument,
+  usesPersonalFonts,
   type SavedTemplate,
 } from './index';
 
@@ -22,6 +23,12 @@ function templateError(cause: unknown): Error {
     : new Error('템플릿의 필수 항목·버전·참조 정보가 올바르지 않습니다.');
 }
 
+async function sha256Hex(blob: Blob) {
+  return [...new Uint8Array(await crypto.subtle.digest('SHA-256', await blob.arrayBuffer()))]
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
+}
+
 function metadataKey(asset: Asset) {
   return JSON.stringify([asset.mimeType, asset.byteLength, asset.pixelWidth, asset.pixelHeight]);
 }
@@ -31,6 +38,7 @@ function collectAssets(templates: SavedTemplate[]) {
   for (const template of templates) {
     validateEditorDocument(template.document);
     for (const asset of template.document.assets) {
+      if (asset.mimeType.startsWith('font/')) continue;
       const existing = assets.get(asset.sha256);
       if (existing && metadataKey(existing) !== metadataKey(asset))
         throw new Error('같은 소재 해시에 서로 다른 이미지 정보가 지정되어 있습니다.');
@@ -89,6 +97,15 @@ export async function restoreTemplate(
     for (const asset of doc.assets) {
       const blob = blobs.get(asset.sha256);
       if (!blob) throw new Error('템플릿 이미지 본문을 찾을 수 없습니다.');
+      if (asset.mimeType.startsWith('font/')) {
+        // 개인 글꼴 원본은 템플릿 저장소에 함께 보관된 바이트를 검증해 그대로 적용한다.
+        if (blob.size !== asset.byteLength || blob.type !== asset.mimeType)
+          throw new Error('개인 글꼴 원본의 크기 또는 형식이 일치하지 않습니다.');
+        if ((await sha256Hex(blob)) !== asset.sha256)
+          throw new Error('개인 글꼴 원본의 SHA256 해시가 일치하지 않습니다.');
+        await loadUploadedFont(asset.sha256, blob);
+        continue;
+      }
       images.set(asset.id, await decodeAsset(asset, blob));
     }
     await ensureDocumentFonts(doc);
@@ -153,6 +170,11 @@ export async function exportTemplateBackup(
 ): Promise<string> {
   try {
     if (!templates.length) throw new Error('내보낼 템플릿을 먼저 저장해 주세요.');
+    // 기존 Base64 JSON은 이미지 전용 형식이므로 개인 글꼴을 조용히 빼지 않고 거부한다.
+    if (templates.some((template) => usesPersonalFonts(template.document)))
+      throw new Error(
+        '개인 글꼴을 쓰는 템플릿은 JSON 백업에 담을 수 없습니다. 전체 자료 ZIP 다운로드를 사용해 주세요.',
+      );
     const metadata = collectAssets(templates);
     // Base64 문자열 생성 전에 파일 합계와 예상 확장 크기를 검사한다.
     const minimumBytes = [...metadata.values()].reduce(
