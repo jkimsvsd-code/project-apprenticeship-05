@@ -1,0 +1,11 @@
+# B 수신 기록
+
+- B 서비스/모델: Claude (claude.ai, Claude Opus 5.5, 모델 ID `claude-opus-5-5`). A 서비스(Codex)와 다른 서비스다.
+- B 대화: 이전 대화 없이 새로 시작한 claude.ai 대화. 사용자 첫 지시 수신 2026-10-27T01:50:00Z(KST 10:50), 사용자의 B 자격 승인·로컬 저장소 연결 2026-10-27T01:53:00Z(KST 10:53).
+- 실제 수신물: claude.ai 프로젝트 문서 `A-to-B.md`(2,825바이트)와 사용자 로컬 저장소 폴더. 이전 대화·다른 첨부는 받지 않았다.
+- 수신 문서 SHA-256: `1e9b1185ebb872fbfcbcebdfd1fb46d739531dc7eb23f5c793f0e4ffa5464ae6`
+- evidence/runs/run-001/handoff-check.json 기록 SHA-256: `1e9b1185ebb872fbfcbcebdfd1fb46d739531dc7eb23f5c793f0e4ffa5464ae6` → 일치.
+- 저장소 handoff/runs/run-001/A-to-B.md SHA-256: 위와 동일.
+- 저장소 확인: `task05-A-end` → `3e7d7b0fbed8fc32abccee69e1690cb6b2370050`(HEAD, 작업 트리 깨끗함), `task05-freeze` → `815aa41b9ec25f99cb794109fb930b0acfed8d70`. `d90a3bae…`와 `815aa41b…`는 모두 `task05-A-end`의 조상이다.
+- 수신 방식 차이: 인수인계 문서는 bundle clone을 가정하지만, B는 사용자가 연결한 기존 로컬 저장소에서 태그를 직접 확인했다(사용자 지시).
+- 문서 누락(수신 시점): 실행 환경 차이 외에는 없음. B 작업 공간(클라우드/연결 VM)은 Node 22·npm 10이며 Chrome이 없고 외부 패키지/브라우저 다운로드가 차단되어 있었다.
