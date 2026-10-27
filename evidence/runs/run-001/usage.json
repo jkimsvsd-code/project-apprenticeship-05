@@ -1,0 +1,21 @@
+{
+  "A": {
+    "service": "Codex",
+    "model": null,
+    "modelNote": "Exact UI model label not exposed by execution environment; user must record before B selection.",
+    "startedAt": "2026-10-27T01:15:53.202Z",
+    "endedAt": null,
+    "requestCount": 1,
+    "requests": [
+      {
+        "number": 1,
+        "at": "2026-10-27T01:15:53.202Z",
+        "type": "Activation after freeze of the user-approved initial implementation instruction; preparation excluded"
+      }
+    ],
+    "timeLimitSeconds": 3600,
+    "requestLimit": 12,
+    "internalTools": "Internal tool actions are visible in the chat; no inferred provider/API call count is reported."
+  },
+  "B": null
+}
