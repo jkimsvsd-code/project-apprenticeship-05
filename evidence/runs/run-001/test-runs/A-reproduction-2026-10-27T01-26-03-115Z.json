@@ -1,0 +1,86 @@
+{
+  "phase": "A-reproduction",
+  "startedAt": "2026-10-27T01:26:03.115Z",
+  "sourceVersion": "d90a3bae21fc91fcdf04e4ca3ae3628d9820c6a8",
+  "cases": [
+    {
+      "id": "ZIP-01",
+      "input": "2 resources / current / 2 templates / TTF+OTF",
+      "expected": "all counts, raw hashes and references preserved",
+      "status": "PASS",
+      "durationMs": 719
+    },
+    {
+      "id": "ZIP-02",
+      "input": "unsaved caption edit, actual UI download",
+      "expected": "current JSON and decoded PNG match editor, no template overwrite",
+      "status": "FAIL",
+      "error": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '전체 자료 ZIP 다운로드', exact: true })\u001b[22m\n",
+      "durationMs": 15664
+    },
+    {
+      "id": "ZIP-03",
+      "input": "101 stored template snapshots",
+      "expected": "101 distinct template JSON entries",
+      "status": "PASS",
+      "durationMs": 610
+    },
+    {
+      "id": "ZIP-04",
+      "input": "shared red / template-only blue / unused green",
+      "expected": "three image bodies, no duplicates, all asset refs resolve",
+      "status": "PASS",
+      "durationMs": 515
+    },
+    {
+      "id": "ZIP-05",
+      "input": "TTF+OTF import, apply TTF, save template, reload, load template, ZIP",
+      "expected": "font applied and restored, both original fonts exported",
+      "status": "FAIL",
+      "error": "locator.setInputFiles: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('개인 글꼴 파일', { exact: true })\u001b[22m\n",
+      "durationMs": 15461
+    },
+    {
+      "id": "ZIP-06",
+      "input": "text bytes disguised as invalid.ttf",
+      "expected": "rejected, font library unchanged",
+      "status": "PASS",
+      "durationMs": 483
+    },
+    {
+      "id": "ZIP-07",
+      "input": "same template names and ../ Korean resource name",
+      "expected": "unique safe paths, original names preserved",
+      "status": "PASS",
+      "durationMs": 507
+    },
+    {
+      "id": "ZIP-08",
+      "input": "missing image then wrong image bytes under original hash",
+      "expected": "both reject, no input mutation or partial result",
+      "status": "PASS",
+      "durationMs": 487
+    },
+    {
+      "id": "ZIP-09",
+      "input": "10MB font/+1; 100MB sum/+1; actual 11x9.1MB images",
+      "expected": "exact limits accepted, over rejected",
+      "status": "PASS",
+      "durationMs": 638
+    },
+    {
+      "id": "ZIP-10",
+      "input": "empty libraries, current card, triple click",
+      "expected": "one actual download and zero optional counts",
+      "status": "FAIL",
+      "error": "locator.evaluate: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '전체 자료 ZIP 다운로드', exact: true })\u001b[22m\n",
+      "durationMs": 15454
+    }
+  ],
+  "fixturePreflight": true,
+  "passed": 7,
+  "failed": 3,
+  "finishedAt": "2026-10-27T01:26:57.195Z",
+  "complete": true,
+  "errorRound": true
+}
