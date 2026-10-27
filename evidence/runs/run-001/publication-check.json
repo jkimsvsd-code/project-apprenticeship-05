@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-27T02:19:47Z",
+  "checkedBy": "AI B (Claude) after B_end; 과제5 시간·요청 집계 밖의 후속 확인",
+  "status": "not-verified-b-result-not-deployed",
+  "resultUrl": {
+    "url": "https://jjal-card-studio-three.vercel.app/",
+    "providedBy": "user",
+    "anonymousFetch": "PASS: 로그인 없이 응답, 문서 제목 '짤 카드 스튜디오'(도구의 익명 웹 요청, 실제 시크릿 창 아님)",
+    "containsBResult": false,
+    "reason": "B 커밋(32d515f·6b78a49·59b318a)은 사용자 로컬 저장소에만 있다. AGENTS.md에 따라 private 원본·과제3 공개 정본에 push하지 않았으므로 이 배포에는 B 결과가 포함될 수 없다. 배포 버전 확인은 하지 않았다."
+  },
+  "sourceUrls": {
+    "provided": [
+      "https://github.com/jkimsvsd-code/jjal-card-studio-portfolio",
+      "https://github.com/jkimsvsd-code/jjal-card-studio",
+      "https://github.com/jkimsvsd-code/project-apprenticeship-03-jjal"
+    ],
+    "role": "과제3 공개 정본·private 원본·과제3 저장소. 과제5 규칙상 수정·push 대상이 아니다.",
+    "publicSnapshotReadable": "jjal-card-studio-portfolio HEAD 70bcebd60cca76b08821aa7aec62fafd55f22c18 익명 git ls-remote 확인",
+    "task05SourceUrl": null
+  },
+  "incognitoCheck": "미실시(사용자 수동 확인 항목)",
+  "remaining": [
+    "과제5 결과를 공개할 별도 경로(새 저장소/배포) 결정은 사용자 몫이며 이 기록 시점까지 없다.",
+    "시크릿 창에서 결과물·소스 URL 접근 확인",
+    "본인 판단"
+  ]
+}
