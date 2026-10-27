@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "frozenAt": "2026-10-27T01:15:27.419Z",
+  "sourceBeforeFreeze": "fdc1b62f85d784e02bc70bead385922af8ca0bf5",
+  "files": {
+    "AGENTS.md": "d6a7b66e90257a5461fc54ed66f7f3e8bca173cd1f9d95750a9ef3930ec8bde4",
+    "package-lock.json": "6011bcc37df90c7b7255456bb38d2ce16536c6c7e4f86d907a022779815bdda5",
+    "package.json": "13d930532968fff06906c435031b691ebf44677af6c34f54a0b6d2ae01694802",
+    "protocol/acceptance-cases.json": "a6c19c02cb4746c5ed940e12100a652c8f07543ff8c81a4519702621eb91031b",
+    "protocol/archive-api.md": "a3111f5abb0a37806e1c16db97eced751196012c64b0923fbc7c1850f83c1e68",
+    "protocol/initial-request.md": "0d6945e258a906a277d79a002db14034ebd5f6668429165cc9500da374709353",
+    "protocol/limits.json": "48a7d45892120e60c1fa70e9d1fcd6224e97ec5358acc77bc9d5d23208f9c1df",
+    "protocol/zip-spec.md": "118c950f29ca7865f52342a45d780446ffc27945512e9c9cdc14a277adb43772",
+    "tests/acceptance/browser-driver.mjs": "a2b4d8e33f5c72561ef8ab6b299f87c9ea4a7c30142e8bff3c0b2d58dc503c2f",
+    "tests/acceptance/cases.mjs": "3afcb7bc3cd0726f9a96469c597ed37e15e58fa75119ccbd038b3b02522f029d",
+    "tests/acceptance/fixtures/README.md": "d80c2b746ee49deb97103996a31bd03486dbedaa1c88de0c0cb556b39899e645",
+    "tests/acceptance/fixtures/blue.png": "36fe6ab71ec56fa1fc84326e4673fbf028c6ad2eb5051ce5a9e6cb0d07c85f4c",
+    "tests/acceptance/fixtures/document.json": "71714a65c39bc14ea0aa1d22357715b689e1a8109dfb66bbb0b40851f4a2468d",
+    "tests/acceptance/fixtures/fixture-manifest.json": "6860381528aa56c3a83139c0b6a3c737c083c1dbad675eb0405118a6aece6f9c",
+    "tests/acceptance/fixtures/green.png": "1d94f5747c6df5f6b0ccb70ce912bf4b6ff917729cd13942084bc9c83ddad351",
+    "tests/acceptance/fixtures/invalid.ttf": "9498d15686c1f5ed3c0b550f92cde557677c62d493098cc89fd19c1d1d31f60c",
+    "tests/acceptance/fixtures/red.png": "9fa0f2ae2b655c877690c6ed5649dad9f248147f7e21d0f8011636c20d627162",
+    "tests/acceptance/fixtures/sample.otf": "debef2b487a0e445de3482864f7852169abba97ae3d36d68952b88da290fbb27",
+    "tests/acceptance/fixtures/sample.ttf": "cd6ef3058e2588621572e4c25a6349fd032fcaee5bb446e1f2daeb1763be846d",
+    "tests/acceptance/fixtures/templates-101.json": "6996d1eae07afb4c7f1a8f5da08838f66eec8e9ba88831c11d965d00307e49ea",
+    "tests/acceptance/generate-fixtures.py": "faa3860bbb3ec50eb62a052ff921e2f064223c7931dcedc19ed45a8101e44a43",
+    "tests/acceptance/inspect-zip.py": "764144342a02ac4c960af81f1f39769e65e91648589434e81793d473f9ade6c6",
+    "tools/checks/run-acceptance.mjs": "7b9b25c2bc3cd0615413377e1bc172f790715bc119535c94e3d41066ffea7bb2",
+    "tools/integrity/freeze.mjs": "ebd3018f425188da4d8584916cafbd465f8ee2c5533da8c8906a33b60ce77d0d",
+    "tools/integrity/verify.mjs": "b05d1f55f5bbc2768870c13b5e1cfd5d32483bbb22a7a0ed04eb851ff8bf00e0"
+  }
+}
