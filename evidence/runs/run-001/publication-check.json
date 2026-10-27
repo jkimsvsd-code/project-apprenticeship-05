@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-10-27T02:19:47Z",
   "checkedBy": "AI B (Claude) after B_end; 과제5 시간·요청 집계 밖의 후속 확인",
-  "status": "not-verified-b-result-not-deployed",
+  "status": "source-published-result-not-deployed",
   "resultUrl": {
     "url": "https://jjal-card-studio-three.vercel.app/",
     "providedBy": "user",
@@ -18,12 +18,13 @@
     "role": "과제3 공개 정본·private 원본·과제3 저장소. 과제5 규칙상 수정·push 대상이 아니다.",
     "publicSnapshotReadable": "jjal-card-studio-portfolio HEAD 70bcebd60cca76b08821aa7aec62fafd55f22c18 익명 git ls-remote 확인",
     "task05SourceUrl": "https://github.com/jkimsvsd-code/project-apprenticeship-05",
-    "task05SourceStatus": "push-pending: 사용자 제공 과제5 전용 저장소. 기록 시점 원격은 비어 있음(익명 git ls-remote, 브랜치·태그 없음). B 세션은 GitHub 쓰기 권한이 없어 사용자가 직접 push한다."
+    "task05SourceStatus": "published-verified 2026-10-27T02:35:44Z: 사용자가 push. 익명 git ls-remote·clone으로 main=253e09b0878329051e53c6fc2a0739ffacc42ca7, task05-A-end=3e7d7b0, task05-freeze=815aa41 확인. clone 내용에 B 수신 기록·B 검사 회차 2개·README B 결과 포함. 브라우저 시크릿 창 확인은 아님."
   },
   "incognitoCheck": "미실시(사용자 수동 확인 항목)",
   "remaining": [
     "과제5 결과를 공개할 별도 경로(새 저장소/배포) 결정은 사용자 몫이며 이 기록 시점까지 없다.",
     "시크릿 창에서 결과물·소스 URL 접근 확인",
     "본인 판단"
-  ]
+  ],
+  "lastUpdatedAt": "2026-10-27T02:35:44Z"
 }
