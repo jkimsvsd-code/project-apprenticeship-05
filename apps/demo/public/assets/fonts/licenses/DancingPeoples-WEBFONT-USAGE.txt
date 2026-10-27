@@ -1,0 +1,37 @@
+Dancing Peoples TTF package
+====================
+
+Package files
+-------------
+This ZIP contains the TTF font files for Dancing Peoples.
+
+Webfont use
+-----------
+Use the WOFF2 package or the CDN stylesheet for websites. TTF and OTF
+are primarily for desktop installation and design tools.
+
+WOFF2 webfont package:
+https://github.com/hada0127/hada-type-dancing-peoples/releases/download/v2026.10.21/DancingPeoples-WOFF2.zip
+
+CDN
+---
+Public distribution repo:
+https://github.com/hada0127/hada-type-dancing-peoples
+
+Version-pinned stylesheet (whole files):
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hada0127/hada-type-dancing-peoples@v2026.10.21/css/dancing-peoples.css">
+
+Version-pinned sliced stylesheet (unicode-range; the browser downloads
+only the slices the page's text uses):
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hada0127/hada-type-dancing-peoples@v2026.10.21/css/dancing-peoples-subset.css">
+
+TTF ZIP package:
+https://github.com/hada0127/hada-type-dancing-peoples/releases/download/v2026.10.21/DancingPeoples-TTF.zip
+
+The example uses v2026.10.21. Keep the version pinned in production,
+then update it intentionally when you upgrade the font files.
+
+License
+-------
+Dancing Peoples is distributed under the SIL Open Font License 1.1.
+See LICENSE.txt in this package.

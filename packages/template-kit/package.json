@@ -1,0 +1,17 @@
+{
+  "name": "@jjal/template-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./browser": "./src/browser.ts"
+  },
+  "dependencies": {
+    "@jjal/document-model": "0.1.0",
+    "@jjal/policies": "0.1.0",
+    "@jjal/image-io": "0.1.0",
+    "@jjal/renderer": "0.1.0",
+    "zod": "4.6.7"
+  }
+}

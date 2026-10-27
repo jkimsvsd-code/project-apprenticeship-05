@@ -1,0 +1,176 @@
+{
+  "collection": "Jjal Card Studio original geometric starter art",
+  "createdAt": "2026-10-21",
+  "creator": "Jjal Card Studio project, implemented with Codex assistance",
+  "generation": {
+    "script": "scripts/generate-starter-assets.py",
+    "pillow": "12.3.0",
+    "randomness": "none",
+    "externalArtwork": "none",
+    "canvas": [512, 512]
+  },
+  "usage": {
+    "statement": "프로젝트에서 직접 작성한 도형·색·표정의 오리지널 소재. 제품과 이용자의 상업적·비상업적 완성 작품에 포함·편집·배포하도록 제공한다.",
+    "attributionRequired": false,
+    "thirdPartyArtwork": false,
+    "reviewNote": "실제 배포 파일과 생성 출처를 기록한 제공 방침이며, 독점권·상표 등록이나 법률 검토 완료를 주장하지 않는다."
+  },
+  "assets": [
+    {
+      "asset": {
+        "id": "starter-seed-neutral",
+        "mimeType": "image/png",
+        "byteLength": 24985,
+        "sha256": "33bd2f4242893366144c7192fdd750db6cd658723671d71ad594750240ece7c0",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/seed-neutral.png",
+      "label": "새싹 콩 · 기본",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-seed-happy",
+        "mimeType": "image/png",
+        "byteLength": 26402,
+        "sha256": "580f7b76dca203490cbd4190914f19d4f76da920c73d3537e1a63a036658c6f5",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/seed-happy.png",
+      "label": "새싹 콩 · 기쁨",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-seed-surprised",
+        "mimeType": "image/png",
+        "byteLength": 27984,
+        "sha256": "a94fd47bb7d542d9c16608fa68362615acd166f7271074814771201b34d9d189",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/seed-surprised.png",
+      "label": "새싹 콩 · 당황",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-seed-angry",
+        "mimeType": "image/png",
+        "byteLength": 27794,
+        "sha256": "b64fc95d6d17807f3c0e2f0e443808ad78b74cd620958493e9a0322866a87f08",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/seed-angry.png",
+      "label": "새싹 콩 · 분노",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-block-neutral",
+        "mimeType": "image/png",
+        "byteLength": 19520,
+        "sha256": "051a9bc125e50ea0bf85330c53d591692d81df8461a11f0052355ad2d7b458b4",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/block-neutral.png",
+      "label": "살구 네모 · 기본",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-block-happy",
+        "mimeType": "image/png",
+        "byteLength": 20882,
+        "sha256": "ad1912e908e87f17f6632ab8dfec7386a9cd8cb80c6deb54cfb6bfeadecdde34",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/block-happy.png",
+      "label": "살구 네모 · 기쁨",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-block-surprised",
+        "mimeType": "image/png",
+        "byteLength": 22776,
+        "sha256": "14643c115b9183f53bd70fd01d57c7e76a99d58ef6d091db24aeac203cf47452",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/block-surprised.png",
+      "label": "살구 네모 · 당황",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-block-angry",
+        "mimeType": "image/png",
+        "byteLength": 22419,
+        "sha256": "07324079a87e4c0444c747e605ebcfd2fc6572feeef2c196a6306d9dee0dcf70",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/block-angry.png",
+      "label": "살구 네모 · 분노",
+      "category": "character"
+    },
+    {
+      "asset": {
+        "id": "starter-pattern-dots",
+        "mimeType": "image/png",
+        "byteLength": 5375,
+        "sha256": "240b749c59eb88ee7039d0d4bcaddc67aa1d0aa3c6abe61bacc4c5efd01bcb5e",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/pattern-dots.png",
+      "label": "점",
+      "category": "pattern"
+    },
+    {
+      "asset": {
+        "id": "starter-pattern-stripes",
+        "mimeType": "image/png",
+        "byteLength": 5920,
+        "sha256": "2b43d484f6016cfd63e06b50a59cefd3c2cf181d969aad3e6431bc4d4ac87509",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/pattern-stripes.png",
+      "label": "줄무늬",
+      "category": "pattern"
+    },
+    {
+      "asset": {
+        "id": "starter-pattern-grid",
+        "mimeType": "image/png",
+        "byteLength": 3205,
+        "sha256": "5743994f02ac7fb5666f5f77e9f80ba2f3ac28e90c412aa27003eaded04d8670",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/pattern-grid.png",
+      "label": "격자",
+      "category": "pattern"
+    },
+    {
+      "asset": {
+        "id": "starter-pattern-focus",
+        "mimeType": "image/png",
+        "byteLength": 24304,
+        "sha256": "2e9a9e4e50be2e39483a4cc778b7716c24e98df21522589fb2e9ea01be96deaa",
+        "pixelWidth": 512,
+        "pixelHeight": 512
+      },
+      "url": "./assets/starter/pattern-focus.png",
+      "label": "집중선",
+      "category": "pattern"
+    }
+  ]
+}

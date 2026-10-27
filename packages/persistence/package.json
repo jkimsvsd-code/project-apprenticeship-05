@@ -1,0 +1,15 @@
+{
+  "name": "@jjal/persistence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./interfaces": "./interfaces/index.ts",
+    "./browser": "./browser/index.ts"
+  },
+  "dependencies": {
+    "@jjal/document-model": "0.1.0",
+    "@jjal/template-kit": "0.1.0",
+    "idb": "8.0.4"
+  }
+}

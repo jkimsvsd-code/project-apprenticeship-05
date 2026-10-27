@@ -1,0 +1,14 @@
+{
+  "name": "@jjal/editor-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@jjal/document-model": "0.1.0",
+    "@jjal/content": "0.1.0",
+    "@jjal/policies": "0.1.0"
+  }
+}

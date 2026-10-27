@@ -1,0 +1,23 @@
+{
+  "name": "@jjal/demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --strictPort"
+  },
+  "dependencies": {
+    "@jjal/image-io": "0.1.0",
+    "@jjal/editor-core": "0.1.0",
+    "@jjal/content": "0.1.0",
+    "@jjal/document-model": "0.1.0",
+    "@jjal/policies": "0.1.0",
+    "@jjal/persistence": "0.1.0",
+    "@jjal/renderer": "0.1.0",
+    "@jjal/template-kit": "0.1.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

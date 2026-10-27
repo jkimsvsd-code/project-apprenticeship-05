@@ -1,0 +1,15 @@
+node_modules
+.npm-cache
+dist
+coverage
+test-results
+playwright-report
+.vitest
+.vercel
+.gitkeep
+package-lock.json
+apps/demo/public/assets/fonts
+docs/directory-tree.txt
+tests/fixtures/invalid-json.txt
+.publication-manifest.json
+publication-manifest.json

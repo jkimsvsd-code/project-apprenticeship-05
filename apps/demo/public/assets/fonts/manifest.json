@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "fonts": [
+    {
+      "family": "Noto Sans KR",
+      "sourceRepository": "https://github.com/google/fonts",
+      "sourceCommit": "47d54ca1ebb14fd864695f1d39dc734f39017c33",
+      "license": "OFL-1.1",
+      "modified": false,
+      "copyright": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+      "version": "Version 2.004-H2;hotconv 1.0.118;makeotfexe 2.5.65603",
+      "licenseCopyright": "Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'",
+      "files": {
+        "font": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",
+          "sourcePath": "ofl/notosanskr/NotoSansKR[wght].ttf",
+          "localPath": "apps/demo/public/assets/fonts/notosanskr/NotoSansKR-Variable.ttf",
+          "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+          "byteLength": 10414588
+        },
+        "license": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notosanskr/OFL.txt",
+          "sourcePath": "ofl/notosanskr/OFL.txt",
+          "localPath": "apps/demo/public/assets/fonts/notosanskr/OFL.txt",
+          "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+          "byteLength": 4388
+        },
+        "metadata": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notosanskr/METADATA.pb",
+          "sourcePath": "ofl/notosanskr/METADATA.pb",
+          "localPath": "apps/demo/public/assets/fonts/notosanskr/METADATA.pb",
+          "sha256": "9b8b27c0dd1adbb0057d1fbe9534207ab3606114ace6755453d14668912471a1",
+          "byteLength": 767
+        }
+      }
+    },
+    {
+      "family": "Noto Serif KR",
+      "sourceRepository": "https://github.com/google/fonts",
+      "sourceCommit": "47d54ca1ebb14fd864695f1d39dc734f39017c33",
+      "license": "OFL-1.1",
+      "modified": false,
+      "copyright": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
+      "version": "Version 2.003-H1;hotconv 1.1.1;makeotfexe 2.6.0",
+      "licenseCopyright": "Copyright 2012 Google Inc. All Rights Reserved.",
+      "files": {
+        "font": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notoserifkr/NotoSerifKR%5Bwght%5D.ttf",
+          "sourcePath": "ofl/notoserifkr/NotoSerifKR[wght].ttf",
+          "localPath": "apps/demo/public/assets/fonts/notoserifkr/NotoSerifKR-Variable.ttf",
+          "sha256": "11f8d5de6f1b79195efba3828aaa2ec95c1178f5ae976fb23c8d53250a9938f3",
+          "byteLength": 23795420
+        },
+        "license": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notoserifkr/OFL.txt",
+          "sourcePath": "ofl/notoserifkr/OFL.txt",
+          "localPath": "apps/demo/public/assets/fonts/notoserifkr/OFL.txt",
+          "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+          "byteLength": 4350
+        },
+        "metadata": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notoserifkr/METADATA.pb",
+          "sourcePath": "ofl/notoserifkr/METADATA.pb",
+          "localPath": "apps/demo/public/assets/fonts/notoserifkr/METADATA.pb",
+          "sha256": "11a2445e02b744e88e8ed6fd5b807da7df4628fcc6526a15ea9b111ba0458bf4",
+          "byteLength": 873
+        }
+      }
+    },
+    {
+      "family": "Jua",
+      "sourceRepository": "https://github.com/google/fonts",
+      "sourceCommit": "47d54ca1ebb14fd864695f1d39dc734f39017c33",
+      "license": "OFL-1.1",
+      "modified": false,
+      "copyright": "Copyright 2018 The BM JUA Project Authors",
+      "version": "Version 1.001",
+      "licenseCopyright": "Copyright 2018 The Jua Project Authors",
+      "files": {
+        "font": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/jua/Jua-Regular.ttf",
+          "sourcePath": "ofl/jua/Jua-Regular.ttf",
+          "localPath": "apps/demo/public/assets/fonts/jua/Jua-Regular.ttf",
+          "sha256": "769677aef240bfc3b9965f2b50748075bff885e6c6992fc591a3fb268279f898",
+          "byteLength": 2119352
+        },
+        "license": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/jua/OFL.txt",
+          "sourcePath": "ofl/jua/OFL.txt",
+          "localPath": "apps/demo/public/assets/fonts/jua/OFL.txt",
+          "sha256": "44a7c6e4c5572392ae122d3b1d8c6ba6fd640a7797e675384585d947f2773e3c",
+          "byteLength": 4342
+        },
+        "metadata": {
+          "sourceUrl": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/jua/METADATA.pb",
+          "sourcePath": "ofl/jua/METADATA.pb",
+          "localPath": "apps/demo/public/assets/fonts/jua/METADATA.pb",
+          "sha256": "c6b70d2a511edacbfb1f216140d2b46e7375118b60113c82af492f489bbf7d67",
+          "byteLength": 549
+        }
+      }
+    }
+  ]
+}

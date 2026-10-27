@@ -1,0 +1,37 @@
+# Local installation, build, and verification output
+node_modules/
+.npm-cache/
+dist/
+coverage/
+test-results/
+playwright-report/
+.vitest/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+
+# Secrets, deployment connection state, and personal runtime material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vercel/
+.wrangler/
+local-only/
+private/
+raw-evidence/
+runtime-data/
+browser-profiles/
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# The generated publication manifest is part of the submitted snapshot.
+!.publication-manifest.json
+!publication-manifest.json
+
+# Task 5 local browser artifacts
+.local/

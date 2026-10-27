@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "status": "approved",
+  "timeLimitSecondsPerAI": 3600,
+  "requestLimitPerAI": 12,
+  "plannedImplementationStopSeconds": 2700,
+  "plannedImplementationStopRequests": 9,
+  "fontBytes": 10000000,
+  "archiveBytes": 100000000,
+  "requestUnit": "One user/controller work instruction; follow-ups and retries count; internal tools recorded separately.",
+  "clock": "Continuous wall time from activation of the approved implementation request through final source/tests/handoff; preparation recorded separately."
+}

@@ -1,0 +1,38 @@
+{
+  "README.md": {
+    "sha256": "d80c2b746ee49deb97103996a31bd03486dbedaa1c88de0c0cb556b39899e645",
+    "bytes": 665
+  },
+  "blue.png": {
+    "sha256": "36fe6ab71ec56fa1fc84326e4673fbf028c6ad2eb5051ce5a9e6cb0d07c85f4c",
+    "bytes": 77
+  },
+  "document.json": {
+    "sha256": "71714a65c39bc14ea0aa1d22357715b689e1a8109dfb66bbb0b40851f4a2468d",
+    "bytes": 5792
+  },
+  "green.png": {
+    "sha256": "1d94f5747c6df5f6b0ccb70ce912bf4b6ff917729cd13942084bc9c83ddad351",
+    "bytes": 76
+  },
+  "invalid.ttf": {
+    "sha256": "9498d15686c1f5ed3c0b550f92cde557677c62d493098cc89fd19c1d1d31f60c",
+    "bytes": 20
+  },
+  "red.png": {
+    "sha256": "9fa0f2ae2b655c877690c6ed5649dad9f248147f7e21d0f8011636c20d627162",
+    "bytes": 75
+  },
+  "sample.otf": {
+    "sha256": "debef2b487a0e445de3482864f7852169abba97ae3d36d68952b88da290fbb27",
+    "bytes": 976
+  },
+  "sample.ttf": {
+    "sha256": "cd6ef3058e2588621572e4c25a6349fd032fcaee5bb446e1f2daeb1763be846d",
+    "bytes": 988
+  },
+  "templates-101.json": {
+    "sha256": "6996d1eae07afb4c7f1a8f5da08838f66eec8e9ba88831c11d965d00307e49ea",
+    "bytes": 717498
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "applicationURL": "https://jjal-card-studio-three.vercel.app/",
+  "deployedApplicationSource": "72bd86a3aa1a75fefb6924414295232fe85d5943",
+  "localVerification": {
+    "unitTests": 673,
+    "finalUniqueBrowserCases": 9,
+    "actualPngFiles": 35,
+    "comparedRGBAChannels": 115361280,
+    "differentChannels": 0,
+    "initialFailurePreserved": true,
+    "selectedRecheckExplained": true
+  },
+  "publicVerification": {
+    "profiles": [
+      "Desktop 1440x960",
+      "Pixel 7 browser emulation"
+    ],
+    "passedSteps": 18,
+    "actualPngFiles": 4,
+    "comparedRGBAChannels": 14584320,
+    "differentChannels": 0,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "anonymousStaticFilesVerified": 44,
+    "privatePaths404": 15,
+    "initialFailurePreserved": true,
+    "testOnlyCorrection": "Integrated tool deck count and visible details navigation",
+    "physicalDeviceVerification": false
+  },
+  "screenshots": [
+    {
+      "path": "assets/editor-desktop.png",
+      "sha256": "4efd387557cb94df2c3188e369a0e1cd1d333e1ef7bc308951569cc92f12e015",
+      "pngChunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ],
+      "personalMetadataFound": false,
+      "scope": "Anonymous synthetic demo UI, browser-generated screenshot"
+    },
+    {
+      "path": "assets/editor-mobile.png",
+      "sha256": "6f90e59b723f065e3d190baa50602dae90d85547c1a70325c9b10d343ba08be3",
+      "pngChunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ],
+      "personalMetadataFound": false,
+      "scope": "Anonymous synthetic demo UI, browser-generated screenshot"
+    }
+  ],
+  "publicationScope": "Reviewed source and portfolio summaries; raw conversations, original assignment, private logs and deployment account identifiers excluded",
+  "publicInvalidHexVerification": {
+    "version": 1,
+    "applicationURL": "https://jjal-card-studio-three.vercel.app/",
+    "verifiedAt": "2026-10-24T05:32:20.757Z",
+    "passed": true,
+    "method": "Actual deployed UI using fresh desktop and Pixel 7 browser emulation contexts; no application store access or product/source mutation",
+    "profiles": [
+      "Desktop 1440x960",
+      "Pixel 7 browser emulation"
+    ],
+    "invalidInput": "#ZZZZZZ",
+    "validValuePreserved": "#66C4FF",
+    "observedError": "색은 #과 6자리 HEX, 두께는 0~30으로 입력해 주세요. 기존 작업을 유지합니다.",
+    "errorVisibleAndScreenshotReviewed": true,
+    "completeDocumentBeforeAfterEqual": true,
+    "documentComparisonSource": "Actual UI template save and selected JSON downloads before and after invalid input; complete document objects compared without dropping IDs or timestamps",
+    "previewBeforeAfterEqual": true,
+    "previewComparisonMethod": "SHA-256 of full Canvas RGBA byte arrays and byte-identical PNG snapshots before and after invalid input",
+    "comparedRGBAChannelsPerProfile": 4665600,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "failedRequests": 0,
+    "physicalDeviceVerification": false,
+    "scope": "Contour HEX rejection on a newly added square at 1:1; not every HEX field or ratio, not a new full regression run"
+  },
+  "publicCopyVerification": {
+    "initialPublicCommit": "7e6959f50aaf3c63078c1382e72ed8545559ab44",
+    "anonymousHttpUrls": 7,
+    "anonymousClone": true,
+    "filesExcludingManifest": 267,
+    "privateHistoryCopied": false,
+    "npmCiIgnoreScripts": true,
+    "typecheck": true,
+    "lint": true,
+    "unitTests": 673,
+    "build": true,
+    "mainLockedAndAdminsEnforced": true,
+    "scope": "First public source snapshot. Later portfolio additions do not change application code or dependencies."
+  },
+  "submissionCandidates": {
+    "status": "FINAL_SUBMISSION_CONFIRMED_BY_USER",
+    "pngFiles": 3,
+    "comparedRGBAChannels": 10791360,
+    "differentChannels": 0,
+    "externalImageAssets": 0,
+    "font": "Noto Sans KR",
+    "metadataChunksOtherThanIHDR_IDAT_IEND": 0,
+    "files": [
+      {
+        "file": "card-01-rest.png",
+        "bytes": 71471,
+        "sha256": "01aa1ee18ac30c7dced5b79edf94d627582303e1a5325504ee6e39b1701de69e",
+        "downloadBytesIdentical": true,
+        "reopened": true,
+        "visuallyReviewed": true
+      },
+      {
+        "file": "card-02-recharge.png",
+        "bytes": 45183,
+        "sha256": "09df63325fd7626b017e543064acdf8d0cffac6786b87791edb58be356d00657",
+        "downloadBytesIdentical": true,
+        "reopened": true,
+        "visuallyReviewed": true
+      },
+      {
+        "file": "card-03-own-pace.png",
+        "bytes": 58148,
+        "sha256": "617e67643d11a8c1f6f2d282e824c80027a35ae5d5ba05c18d470664a71940b7",
+        "downloadBytesIdentical": true,
+        "reopened": true,
+        "visuallyReviewed": true
+      }
+    ],
+    "firstCandidateVisualIssuePreserved": true,
+    "humanFinalSelectionConfirmed": true,
+    "humanRoleDescriptionConfirmed": true,
+    "confirmedOn": "2026-10-24",
+    "imageBytesChangedAfterVerification": false
+  },
+  "submissionConfirmation": {
+    "date": "2026-10-24",
+    "confirmedCards": 3,
+    "confirmedHumanRole": "직접 판단한 일: 전체 제품 기획과 기획에 맞춘 제출안 제작을 진행했습니다. 디자인 레퍼런스·컬러 팔레트를 제공하고, 다크 모드·코발트 제외, 중복 도구 제거, 도형의 독립적인 가로·세로 조절, Private → Public 단방향 동기화 등 주요 방향과 세부 요구사항을 결정했습니다.",
+    "actualSubmissionSent": false,
+    "applicationCodeChanged": false
+  }
+}
