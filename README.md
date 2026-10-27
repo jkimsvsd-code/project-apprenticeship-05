@@ -45,4 +45,14 @@ node tools/preflight/check.mjs
 - 새 폴더 설치와 같은7/10 재현: 완료
 - B와 공개URL 검증: 아직 시작/완료하지 않음
 
+## AI B 종료 결과
+
+- 서비스/모델: Claude (claude.ai, Claude Opus 5.5). A(Codex)와 다른 서비스의 새 대화이며 저장소와 원본 인수인계만 받았다.
+- 수신: 원본 SHA-256 `1e9b1185…` 일치(handoff/runs/run-001/B-received.md)
+- 시간: 1,459초(약24분19초), 작업 지시8회. 사용자 기기 변경으로 Node 24 설치 시간 포함
+- 고정 기능 검사: 10/10 PASS(소스 6b78a49). 같은 기기의 A 전달 소스 기준선은 7/10 재현
+- 기존 타입/lint/단위673개/빌드: PASS, 동결25개 변경 없음
+- 공개: 과제5 소스는 이 저장소. 결과물 URL은 과제3 배포이며 B 결과는 배포하지 않았다(evidence/runs/run-001/publication-check.json)
+- 남은 사용자 확인: 시크릿 창 접근, 본인 판단. 인수인계 5단계 보조 UI 확인은 수행하지 않았다
+
 인수인계는 handoff/runs/run-001/A-to-B.md, 상세 구현 경로는 docs/b-resume.md다. task05-A-end에서 `node tools/handoff/export.mjs`를 실행하면 .local/handoff/run-001에 Git bundle과 원본 문서·전달 해시가 준비된다. 실제 B 수신은 별도로 확인한다.
