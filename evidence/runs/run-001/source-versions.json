@@ -2,10 +2,12 @@
   "freeze": "815aa41b9ec25f99cb794109fb930b0acfed8d70",
   "A": {
     "start": "815aa41b9ec25f99cb794109fb930b0acfed8d70",
-    "end": null
+    "end": "51397fe1e2b9544f40af6b172760f040aa1785b5",
+    "lastAcceptanceSource": "d90a3bae21fc91fcdf04e4ca3ae3628d9820c6a8"
   },
   "B": {
     "start": null,
     "end": null
-  }
+  },
+  "deliveryRef": "task05-A-end"
 }

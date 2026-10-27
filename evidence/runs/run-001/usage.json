@@ -4,7 +4,7 @@
     "model": null,
     "modelNote": "Exact UI model label not exposed by execution environment; user must record before B selection.",
     "startedAt": "2026-10-27T01:15:53.202Z",
-    "endedAt": null,
+    "endedAt": "2026-10-27T01:33:20.146Z",
     "requestCount": 1,
     "requests": [
       {
@@ -15,7 +15,11 @@
     ],
     "timeLimitSeconds": 3600,
     "requestLimit": 12,
-    "internalTools": "Internal tool actions are visible in the chat; no inferred provider/API call count is reported."
+    "internalTools": "Internal tool actions are visible in the chat; no inferred provider/API call count is reported.",
+    "elapsedSeconds": 1046.944,
+    "timeLimitMet": true,
+    "requestLimitMet": true,
+    "stopReason": "Planned coherent A scope complete before upper stop threshold; UI work handed to B."
   },
   "B": null
 }

@@ -1,0 +1,7 @@
+{
+  "status": "prepared-not-delivered",
+  "path": "handoff/runs/run-001/A-to-B.md",
+  "sha256": "1e9b1185ebb872fbfcbcebdfd1fb46d739531dc7eb23f5c793f0e4ffa5464ae6",
+  "BReceivedSha256": null,
+  "deliveryVerified": false
+}

@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-27T01:33:20.196Z",
+  "status": "incomplete",
+  "tools": [
+    {
+      "name": "도구 A",
+      "started": true,
+      "finished": true,
+      "seconds": 1046.944,
+      "requests": 1,
+      "errorRounds": 3,
+      "passCount": 7,
+      "cases": [
+        {
+          "id": "ZIP-01",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-02",
+          "status": "FAIL"
+        },
+        {
+          "id": "ZIP-03",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-04",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-05",
+          "status": "FAIL"
+        },
+        {
+          "id": "ZIP-06",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-07",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-08",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-09",
+          "status": "PASS"
+        },
+        {
+          "id": "ZIP-10",
+          "status": "FAIL"
+        }
+      ]
+    },
+    {
+      "name": "도구 B",
+      "started": false,
+      "finished": false,
+      "seconds": null,
+      "requests": null,
+      "errorRounds": null,
+      "passCount": null,
+      "cases": []
+    }
+  ]
+}

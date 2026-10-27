@@ -1,0 +1,19 @@
+{
+  "status": "A-ended-feature-incomplete",
+  "sourceStart": "815aa41b9ec25f99cb794109fb930b0acfed8d70",
+  "sourceEnd": "51397fe1e2b9544f40af6b172760f040aa1785b5",
+  "lastAcceptanceSource": "d90a3bae21fc91fcdf04e4ca3ae3628d9820c6a8",
+  "elapsedSeconds": 1046.944,
+  "requestCount": 1,
+  "completedRounds": 3,
+  "errorRounds": 3,
+  "lastPassCount": 7,
+  "remainingIds": ["ZIP-02", "ZIP-05", "ZIP-10"],
+  "regression": {
+    "typecheck": "PASS",
+    "eslint": "PASS",
+    "unitTests": 673,
+    "build": "PASS"
+  },
+  "freezeChangedFiles": 0
+}
