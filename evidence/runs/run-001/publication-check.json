@@ -17,7 +17,8 @@
     ],
     "role": "과제3 공개 정본·private 원본·과제3 저장소. 과제5 규칙상 수정·push 대상이 아니다.",
     "publicSnapshotReadable": "jjal-card-studio-portfolio HEAD 70bcebd60cca76b08821aa7aec62fafd55f22c18 익명 git ls-remote 확인",
-    "task05SourceUrl": null
+    "task05SourceUrl": "https://github.com/jkimsvsd-code/project-apprenticeship-05",
+    "task05SourceStatus": "push-pending: 사용자 제공 과제5 전용 저장소. 기록 시점 원격은 비어 있음(익명 git ls-remote, 브랜치·태그 없음). B 세션은 GitHub 쓰기 권한이 없어 사용자가 직접 push한다."
   },
   "incognitoCheck": "미실시(사용자 수동 확인 항목)",
   "remaining": [
